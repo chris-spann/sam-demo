@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - curl -sSL https://install.python-poetry.org | python3 -
+      - export PATH="$HOME/.local/bin:$PATH"
+  pre_build:
+    commands:
+      - poetry install
+  build:
+    commands:
+      - sam build
+  post_build:
+    commands:
+      - sam package --s3-bucket $S3_BUCKET --output-template-file packaged.yaml
+
+artifacts:
+  type: zip
+  files:
+    - packaged.yaml

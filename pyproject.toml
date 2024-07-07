@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "sam-demo"
+version = "0.1.0"
+description = ""
+authors = ["Chris Spann <cspanndev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.111.0"
+mangum = "^0.17.0"
+boto3 = "^1.34.140"
+
+[tool.ruff]
+line-length=120
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
