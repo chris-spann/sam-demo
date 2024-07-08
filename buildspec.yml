@@ -12,7 +12,7 @@ phases:
       - export PATH="$HOME/.local/bin:$PATH"
   pre_build:
     commands:
-      - poetry install
+      - poetry install --no-root
   build:
     commands:
       - sam build --use-container
