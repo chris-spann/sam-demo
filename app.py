@@ -15,6 +15,10 @@ def respond (err=None, res=None):
         raise HTTPException(status_code=400, detail=str(err))
     return JSONResponse(status_code=200, content=res)
 
+@app.get("/")
+async def read_root():
+    return {"message": "Welcome to the API"}
+
 @app.get("/{table_name}")
 async def read_items(table_name: str, request: Request):
     try:

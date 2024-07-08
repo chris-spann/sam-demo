@@ -17,6 +17,12 @@ Resources:
           TABLE_TWO_NAME: !Ref TableTwo
       Policies:
         - AmazonDynamoDBFullAccess
+      Events:
+        ServerlessRestApi:
+          Type: Api
+          Properties:
+            Method: GET
+            Path: /
 
   TableOne:
     Type: 'AWS::DynamoDB::Table'
