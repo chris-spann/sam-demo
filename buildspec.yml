@@ -15,7 +15,7 @@ phases:
       - poetry install
   build:
     commands:
-      - sam build
+      - sam build --use-container
   post_build:
     commands:
       - sam package --s3-bucket $S3_BUCKET --output-template-file packaged.yaml
