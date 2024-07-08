@@ -1,5 +1,8 @@
 version: 0.2
 
+env:
+  variables:
+    S3_BUCKET: "sam-demo-bucket-cs"
 phases:
   install:
     runtime-versions:
