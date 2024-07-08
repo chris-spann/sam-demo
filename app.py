@@ -6,7 +6,6 @@ import os
 from mangum import Mangum
 
 app = FastAPI()
-
 dynamo = boto3.client('dynamodb')
 table_one_name = os.environ['TABLE_ONE_NAME']
 table_two_name = os.environ['TABLE_TWO_NAME']
